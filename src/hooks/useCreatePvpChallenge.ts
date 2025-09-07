@@ -6,8 +6,12 @@ export function useCreatePvpChallenge() {
     mutationFn: async (petId: string) => {
       const challengeId = crypto.randomUUID();
       const challengeUrl = `${window.location.origin}/pvp/${challengeId}?challenger=${petId}`;
-
-      return { challengeId, challengeUrl };
+      
+      return {
+        challengeId,
+        challengeUrl,
+        challengerPetId: petId
+      };
     },
   });
 }

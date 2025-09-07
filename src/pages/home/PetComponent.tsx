@@ -253,7 +253,7 @@ export default function PetComponent({ pet }: PetDashboardProps) {
 {challengeData && (
   <div className="mt-3 p-2 border rounded bg-gray-50 text-sm">
     <p className="mb-1 font-semibold">Share this PvP link:</p>
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 mb-2">
       <a
         href={challengeData.challengeUrl}
         target="_blank"
@@ -272,8 +272,20 @@ export default function PetComponent({ pet }: PetDashboardProps) {
         Copy
       </Button>
     </div>
+
+    {/* 👇 Tombol tambahan biar challenger pertama bisa langsung ke lobby */}
+    <Button
+      size="sm"
+      className="bg-purple-600 text-white hover:bg-purple-700"
+      onClick={() => {
+        window.location.href = challengeData.challengeUrl;
+      }}
+    >
+      Go to Lobby
+    </Button>
   </div>
 )}
+
 
           <div className="col-span-2 pt-2">
             {pet.isSleeping ? (

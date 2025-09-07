@@ -35,6 +35,7 @@ export function useMutatePvpPet() {
         arguments: [
           tx.object(pet1), // &mut Pet (challenger)
           tx.object(pet2), // &mut Pet (opponent)
+          // ctx otomatis di-inject sama runtime, ga perlu ditulis
         ],
       });
 
