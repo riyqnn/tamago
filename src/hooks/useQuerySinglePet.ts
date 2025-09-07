@@ -1,6 +1,5 @@
 import { useSuiClient } from "@mysten/dapp-kit";
 import { useQuery } from "@tanstack/react-query";
-import { MODULE_NAME, PACKAGE_ID } from "@/constants/contract";
 import { normalizeSuiPetObject } from "@/lib/utils";
 
 export const queryKeySinglePet = (petId?: string) => {

@@ -1,5 +1,6 @@
 import {  useSearchParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { toast } from "sonner";
 import { 
   Swords, 
   User, 
@@ -40,8 +41,9 @@ export default function PvpLobbyPage() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const currentAccount = useCurrentAccount();
-  
-  const challengerPetId = searchParams.get("challenger");
+
+ const challengerPetId = searchParams.get("challenger") ?? undefined;
+
   
   const [copied, setCopied] = useState(false);
   const [battleStarted, setBattleStarted] = useState(false);
