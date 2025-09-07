@@ -240,7 +240,7 @@ export default function PetComponent({ pet }: PetDashboardProps) {
               />
             </div>
           </div>
-          <div className="col-span-2">
+         <div className="col-span-2">
   <ActionButton
     onClick={() => createChallenge(pet.id)}
     disabled={isAnyActionPending || isCreating}
@@ -251,13 +251,30 @@ export default function PetComponent({ pet }: PetDashboardProps) {
 </div>
 
 {challengeData && (
-  <div className="mt-2 text-sm">
-    Share this link:{" "}
-    <a href={challengeData.challengeUrl} className="text-blue-500 underline">
-      {challengeData.challengeUrl}
-    </a>
+  <div className="mt-3 p-2 border rounded bg-gray-50 text-sm">
+    <p className="mb-1 font-semibold">Share this PvP link:</p>
+    <div className="flex items-center gap-2">
+      <a
+        href={challengeData.challengeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 underline break-all"
+      >
+        {challengeData.challengeUrl}
+      </a>
+      <Button
+        size="sm"
+        variant="outline"
+        onClick={() => {
+          navigator.clipboard.writeText(challengeData.challengeUrl);
+        }}
+      >
+        Copy
+      </Button>
+    </div>
   </div>
 )}
+
           <div className="col-span-2 pt-2">
             {pet.isSleeping ? (
               <Button
