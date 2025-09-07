@@ -276,7 +276,7 @@ export default function PetComponent({ pet }: PetDashboardProps) {
     {/* 👇 Tombol tambahan biar challenger pertama bisa langsung ke lobby */}
     <Button
       size="sm"
-      className="bg-purple-600 text-white hover:bg-purple-700"
+      className="bg-black text-white "
       onClick={() => {
         window.location.href = challengeData.challengeUrl;
       }}

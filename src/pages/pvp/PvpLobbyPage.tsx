@@ -1,4 +1,4 @@
-import { useParams, useSearchParams, useNavigate } from "react-router-dom";
+import {  useSearchParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { 
   Swords, 
@@ -23,10 +23,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  Tooltip,
-  TooltipContent,
+
   TooltipProvider,
-  TooltipTrigger,
+
 } from "@/components/ui/tooltip";
 import Header from "@/components/Header";
 import PetComponent from "@/pages/home/PetComponent";
@@ -38,7 +37,6 @@ import { useMutatePvpPet } from "@/hooks/useMutatePvpPet";
 import { useCurrentAccount } from "@mysten/dapp-kit";
 
 export default function PvpLobbyPage() {
-  const { challengeId } = useParams<{ challengeId: string }>();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const currentAccount = useCurrentAccount();
